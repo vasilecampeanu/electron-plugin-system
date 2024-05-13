@@ -1,0 +1,23 @@
+{
+    "name": "electron-plugin-system",
+    "description": "",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "clean": "turbo run clean && rm -rf .turbo node_modules",
+        "dev": "dotenv -- turbo run dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "turbo": "^1.13.3"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "npm@10.5.2",
+    "workspaces": [
+        "apps/*"
+    ]
+}

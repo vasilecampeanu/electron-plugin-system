@@ -1,0 +1,13 @@
+# Outputs
+.vite
+.turbo
+out
+
+# Dependencies
+node_modules
+
+# Misc
+.DS_Store
+
+# Env
+.env.*local
