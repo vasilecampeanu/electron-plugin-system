@@ -1,3 +1,17 @@
 import '../styles/index.scss';
 
-console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+import { createElement, StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { App } from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
+
+root.render(
+    createElement(
+        StrictMode,
+        {},
+        createElement(
+            App
+        )
+    )
+);
