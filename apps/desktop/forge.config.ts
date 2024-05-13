@@ -1,12 +1,12 @@
-import type { ForgeConfig } from '@electron-forge/shared-types';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
-import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
-import { VitePlugin } from '@electron-forge/plugin-vite';
+import { MakerSquirrel } from '@electron-forge/maker-squirrel';
+import { MakerZIP } from '@electron-forge/maker-zip';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
+import { VitePlugin } from '@electron-forge/plugin-vite';
+import type { ForgeConfig } from '@electron-forge/shared-types';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
-import { copyModulesToAsarDirectory } from './forge.config.utils';
+import { copyModulesToAsarDirectory, packagePlugins } from './forge.config.utils';
 
 const config: ForgeConfig = {
     packagerConfig: {
@@ -14,7 +14,6 @@ const config: ForgeConfig = {
             (buildPath, electronVersion, platform, arch, callback) => {
                 (async () => {
                     try {
-                        // First, wrap and wait for copyModulesToAsarDirectory to complete
                         await new Promise((resolve, reject) => {
                             const modulesToCopy = ['electron-squirrel-startup'];
                             copyModulesToAsarDirectory(modulesToCopy, buildPath, (err) => {
@@ -23,7 +22,13 @@ const config: ForgeConfig = {
                             });
                         });
 
-                        // If both operations complete successfully, invoke the callback without an error
+                        await new Promise((resolve, reject) => {
+                            packagePlugins(buildPath, (err) => {
+                                if (err) reject(err);
+                                else resolve(null);
+                            });
+                        });
+
                         callback();
                     } catch (error) {
                         // If an error occurs in any of the operations, pass the error to the callback

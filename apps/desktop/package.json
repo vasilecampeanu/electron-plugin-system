@@ -23,6 +23,7 @@
         "@electron-forge/plugin-fuses": "^7.4.0",
         "@electron-forge/plugin-vite": "^7.4.0",
         "@electron-forge/shared-types": "^7.4.0",
+        "@electron/asar": "^3.2.10",
         "@electron/fuses": "^1.8.0",
         "@types/react": "^18.3.2",
         "@types/react-dom": "^18.3.0",

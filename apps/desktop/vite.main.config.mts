@@ -1,6 +1,8 @@
 import type { ConfigEnv, UserConfig } from 'vite';
 import { defineConfig, mergeConfig } from 'vite';
-import { getBuildConfig, getBuildDefine, external, pluginHotRestart } from './vite.base.config.mjs';
+
+// eslint-disable-next-line import/no-unresolved
+import { external, getBuildConfig, getBuildDefine, pluginHotRestart } from './vite.base.config.mjs';
 
 // https://vitejs.dev/config
 export default defineConfig((env) => {
