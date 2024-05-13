@@ -1,10 +1,3 @@
-/**
- * Copyright (C) 2024 - Present Vasile Câmpeanu. All rights reserved.
- * 
- * This document and its contents are proprietary to Vasile Câmpeanu. Unauthorized copying, distribution,
- * or utilization of this document, in part or in whole, via any medium is strictly prohibited.
- */
-
 import { HookFunctionErrorCallback } from '@electron/packager';
 import { copy, copyFile } from 'fs-extra';
 import fs from 'node:fs';
