@@ -1,0 +1,7 @@
+{
+    "id": "28d00aa3-6e1f-46c4-88d0-a167ac88b225",
+    "name": "weaver-hello-world",
+    "version": "0.0.1",
+    "description": "This plugin is meant for testing only.",
+    "entry": "out/main.mjs"
+}

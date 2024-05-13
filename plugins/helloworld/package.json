@@ -1,0 +1,26 @@
+{
+    "name": "@plugable/helloworld",
+    "version": "0.0.1",
+    "description": "",
+    "private": true,
+    "main": "out/main.js",
+    "scripts": {
+        "build:plugin": "BUILD_ENVIRONMENT=true vite build",
+        "clean": "rm -rf .turbo node_modules out",
+        "dev": "BUILD_ENVIRONMENT=false vite build --watch"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.2.1",
+        "electron": "^29.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tsconfig": "^7.0.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.2.8"
+    },
+    "peerDependencies": {
+        "electron": "^29.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}

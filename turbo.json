@@ -1,12 +1,27 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "pipeline": {
+        "build": {
+            "cache": true,
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                ".vite"
+            ]
+        },
         "dev": {
             "cache": false,
             "persistent": true
         },
         "clean": {
             "cache": false
+        },
+        "package": {
+            "cache": false,
+            "dependsOn": [
+                "build"
+            ]
         }
     }
 }

@@ -12,7 +12,7 @@ export async function copyModulesToAsarDirectory(
     callback: HookFunctionErrorCallback
 ) {
     const tasks = modules.map(async moduleName => {
-        const modulePath = path.resolve(__dirname, `../node_modules/${moduleName}`);
+        const modulePath = path.resolve(__dirname, `../../node_modules/${moduleName}`);
         const destPath = path.join(buildPath, `node_modules/${moduleName}`);
 
         try {
@@ -46,7 +46,7 @@ export async function packagePlugins(
     buildPath: string,
     callback: HookFunctionErrorCallback
 ) {
-    const pluginsPath = path.resolve(__dirname, '../plugins');
+    const pluginsPath = path.resolve(__dirname, '../../plugins');
 
     fs.readdir(pluginsPath, async (err, pluginNames) => {
         if (err) {
@@ -97,7 +97,7 @@ export async function copyFilesFromNodeModules(
     callback: HookFunctionErrorCallback
 ) {
     const tasks = files.map(async ({ sourcePath, destinationPath }) => {
-        const fullSourcePath = path.resolve(__dirname, `../node_modules/${sourcePath}`);
+        const fullSourcePath = path.resolve(__dirname, `../../node_modules/${sourcePath}`);
         const fullDestinationPath = path.join(buildPath, destinationPath);
 
         try {
